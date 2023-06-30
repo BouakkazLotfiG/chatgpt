@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 const Login = () => {
   return (
-    <div className='bg-[#e9fffa] flex flex-col h-screen items-center justify-between '>
+    <div className='bg-[#e9fffa] flex flex-col h-screen items-center justify-between p-2'>
       <div className='bg-[#11A37F] w-[90%] md:w-[35%] shadow-lg rounded-lg flex flex-col items-center mt-20'>
         <Image
           src='https://links.papareact.com/2i6'

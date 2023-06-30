@@ -19,7 +19,7 @@ const Sidebar = () => {
   );
 
   return (
-    <div className='flex flex-col h-screen p-2'>
+    <div className='flex flex-col h-screen p-2 '>
       <div className='flex-1 '>
         <div>
           {/* newchat */}
@@ -48,7 +48,7 @@ const Sidebar = () => {
           onClick={() => signOut()}
         >
           <ArrowLeftOnRectangleIcon className='w-8 h-8 ' />
-
+          <p className='font-semibold'>Logout</p>
           <img
             src={session.user?.image!}
             alt='avatar'
