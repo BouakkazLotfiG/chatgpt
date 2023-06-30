@@ -25,7 +25,7 @@ const ChatRow = ({ id }: props) => {
     if (!pathname) return;
 
     setActive(pathname.includes(id));
-  }, []);
+  }, [pathname]);
 
   const removeChat = async () => {
     await deleteDoc(doc(db, 'users', session?.user?.email!, 'chats', id));
@@ -39,8 +39,7 @@ const ChatRow = ({ id }: props) => {
     >
       <ChatBubbleLeftIcon className='h-5 w-5 mr-2 cursor-pointer' />
       <p className='flex-1 hidden md:inline-flex truncate'>
-        {messages?.docs[messages?.docs.length - 1]?.data().message ||
-          'New Chat'}
+        {messages?.docs[messages?.docs.length - 1]?.data().text || 'New Chat'}
       </p>
       <TrashIcon
         onClick={removeChat}

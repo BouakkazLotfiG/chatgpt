@@ -21,7 +21,7 @@ export default async function handler(
     return res.status(400).json({ answer: 'Please provide a valid chat ID' });
   }
 
-  const response = await query(prompt, chatId, model, session);
+  const response = await query(prompt, chatId, model);
   console.log('🚀 ~ file: askQuestion.ts:25 ~ response:', response);
 
   const message: Message = {
