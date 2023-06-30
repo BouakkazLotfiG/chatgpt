@@ -6,8 +6,10 @@ import { getServerSession } from 'next-auth';
 import { authOptions } from '@/pages/api/auth/[...nextauth]';
 import Login from '@/components/Login';
 import ClientProvider from '@/components/ClientProvider';
+import localFont from '@next/font/local';
+import { Poppins } from 'next/font/google';
 
-const inter = Inter({ subsets: ['latin'] });
+const poppins = Poppins({ subsets: ['latin'], weight: ['400', '500', '600'] });
 
 export const metadata = {
   title: 'Create Next App',
@@ -24,12 +26,12 @@ export default async function RootLayout({
 
   return (
     <html lang='en'>
-      <body className={inter.className}>
+      <body className={poppins.className}>
         <SessionProvider session={session}>
           {!session ? (
             <Login />
           ) : (
-            <div className='flex'>
+            <div className='flex '>
               <div className='bg-[#202123] max-w-xs h-screen overflow-y-auto md:min-w-[20rem]'>
                 <Sidebar />
               </div>

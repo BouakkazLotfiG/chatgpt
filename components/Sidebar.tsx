@@ -43,11 +43,13 @@ const Sidebar = () => {
       </div>
 
       {session && (
-        <div className='flex justify-between items-center border-gray-700 border chatRow  '>
+        <div
+          className='flex justify-between items-center border-gray-700 border chatRow  '
+          onClick={() => signOut()}
+        >
           <ArrowLeftOnRectangleIcon className='w-8 h-8 ' />
 
           <img
-            onClick={() => signOut()}
             src={session.user?.image!}
             alt='avatar'
             className='h-10 w-10 rounded-full cursor-pointer mx-auto  hover:opacity-50 transition duration-150 ease-in-out'
