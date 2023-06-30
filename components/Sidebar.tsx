@@ -9,6 +9,7 @@ import { db } from '@/firebase';
 import { collection, query } from 'firebase/firestore';
 import ChatRow from './ChatRow';
 import ModelSelection from './ModelSelection';
+import { ArrowLeftOnRectangleIcon } from '@heroicons/react/24/outline';
 
 const Sidebar = () => {
   const { data: session } = useSession();
@@ -42,12 +43,16 @@ const Sidebar = () => {
       </div>
 
       {session && (
-        <img
-          onClick={() => signOut()}
-          src={session.user?.image!}
-          alt='avatar'
-          className='h-12 w-12 rounded-full cursor-pointer mx-auto mb-2 hover:opacity-50 transition duration-150 ease-in-out'
-        />
+        <div className='flex justify-between items-center border-gray-700 border chatRow  '>
+          <ArrowLeftOnRectangleIcon className='w-8 h-8 ' />
+
+          <img
+            onClick={() => signOut()}
+            src={session.user?.image!}
+            alt='avatar'
+            className='h-10 w-10 rounded-full cursor-pointer mx-auto  hover:opacity-50 transition duration-150 ease-in-out'
+          />
+        </div>
       )}
     </div>
   );
