@@ -5,6 +5,7 @@ import SessionProvider from '@/components/SessionProvider';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/pages/api/auth/[...nextauth]';
 import Login from '@/components/Login';
+import ClientProvider from '@/components/ClientProvider';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -20,7 +21,6 @@ export default async function RootLayout({
 }) {
   console.log('next');
   const session = await getServerSession(authOptions);
-  console.log('🚀 ~ file: layout.tsx:22 ~ session:', session);
 
   return (
     <html lang='en'>
@@ -34,6 +34,7 @@ export default async function RootLayout({
                 <Sidebar />
               </div>
 
+              <ClientProvider />
               <div className='bg-[#343541] flex-1'>{children}</div>
             </div>
           )}
