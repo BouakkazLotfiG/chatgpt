@@ -33,9 +33,10 @@ const Login = () => {
           </div>
 
           <button
-            onClick={() => signIn('google')}
-            className='flex justify-center items-center gap-6 px-5 py-3 text-sm hover:bg-gray-700/70 cursor-pointer rounded-lg text-gray-700 
-          transition-all duration-200 ease-out border border-gray-300 hover:border-transparent bg-gray-100 hover:text-white mb-8'
+            disabled
+            // onClick={() => signIn('google')}
+            className='flex justify-center items-center gap-6 px-5 py-3 text-sm bg-gray-500 rounded-lg text-gray-700 
+          border-gray-300    mb-8'
           >
             Sign In with Github
             <Image src='/github.png' width={20} height={20} alt='google' />
